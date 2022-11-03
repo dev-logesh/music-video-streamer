@@ -90,7 +90,7 @@ python3 main.py # run the bot.
 
 # Credits 💖
 
-- [OWNER ❤](https://github.com/god-of-karmas) ``Dev``
+- [OWNER ❤](https://github.com/dev-logesh) ``Dev``
 - [contact in telegram](https://t.me/cl_me_logesh) 
 
 ### Support & Updates
