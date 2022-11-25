@@ -1,0 +1,13 @@
+services:
+  # A Docker web service
+  - type: web
+    name: webdis
+    env: docker
+    repo: https://github.com/dev-logesh/music-video-streamer # optional
+    region: oregon # optional (defaults to oregon)
+    plan: standard # optional (defaults to starter)
+    branch: main # optional (defaults to master)
+    rootDir: webdis
+    dockerCommand: ./webdis.sh # optional (defaults to Dockerfile command)
+    numInstances: 3 # optional (defaults to 1)
+    healthCheckPath: /
