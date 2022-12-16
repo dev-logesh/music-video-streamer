@@ -5,7 +5,7 @@ py-tgcalls
 pyrogram==1.4.16
 youtube-search-python
 yt-dlp
-youtube_dl
+youtube_dl==2021.4.1
 lyricsgenius
 speedtest-cli
 youtube-search
