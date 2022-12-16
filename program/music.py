@@ -144,12 +144,12 @@ async def play(c: Client, m: Message):
                 await suhu.delete()
                 await m.reply_photo(
                     photo=f"{IMG_1}",
-                    caption=f"💡 **Track added to queue »** `{pos}`\n\n🏷 **ɴᴀᴍᴇ:** [{songname}]({link}) | `music`\n💭 **Chat:** `{chat_id}`\n🎧 **ʀᴇQᴜᴇꜱᴛ ʙʏ:** {m.from_user.mention()} \n💚**ᴘᴏᴡᴇʀᴇᴅ ʙʏ :** [🇦 🇵 🇵 🇺 (｡♥️‿♥️｡)](https://t.me/i_appu_you)",
+                    caption=f"💡 **Track added to queue »** `{pos}`\n\n🏷 **ɴᴀᴍᴇ:** [{songname}]({link}) | `music`\n💭 **Chat:** `{chat_id}`\n🎧 **ʀᴇQᴜᴇꜱᴛ ʙʏ:** {m.from_user.mention()} \n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ :** [🇦 🇵 🇵 🇺 (｡♥️‿♥️｡)](https://t.me/i_appu_you)",
                     reply_markup=keyboard,
                 )
             else:
              try:
-                await suhu.edit(" **🔍**")
+                await suhu.edit("🏃‍♂️🏃‍♂️ **ᴊᴏɪɴɪɴɢ ᴠᴄ...**")
                 await call_py.join_group_call(
                     chat_id,
                     AudioPiped(
@@ -162,7 +162,7 @@ async def play(c: Client, m: Message):
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 await m.reply_photo(
                     photo=f"{IMG_2}",
-                    caption=f"🏷 **ɴᴀᴍᴇ:** [{songname}]({link})\n💭 **Chat:** `{chat_id}`\n💡 **ꜱᴛᴀᴛᴜꜱ:** `Playing`\n🎧 **ʀᴇQᴜᴇꜱᴛ ʙʏ:** {requester}\n📹 **ꜱᴛʀᴇᴀᴍ ᴛʏᴘᴇ:** `Music` \n💚**ᴘᴏᴡᴇʀᴇᴅ ʙʏ :** [🇦 🇵 🇵 🇺 (｡♥️‿♥️｡)](https://t.me/i_appu_you)",
+                    caption=f"🏷 **ɴᴀᴍᴇ:** [{songname}]({link})\n💭 **Chat:** `{chat_id}`\n💡 **ꜱᴛᴀᴛᴜꜱ:** `Playing`\n🎧 **ʀᴇQᴜᴇꜱᴛ ʙʏ:** {requester}\n📹 **ꜱᴛʀᴇᴀᴍ ᴛʏᴘᴇ:** `Music` \n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ :** [🇦 🇵 🇵 🇺 (｡♥️‿♥️｡)](https://t.me/i_appu_you)",
                     reply_markup=keyboard,
                 )
              except Exception as e:
@@ -174,7 +174,7 @@ async def play(c: Client, m: Message):
                     "» reply to an **audio file** or **give something to search.**"
                 )
             else:
-                suhu = await c.send_message(chat_id, "🔍 **Searching...**")
+                suhu = await c.send_message(chat_id, "🔍 ")
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 if search == 0:
@@ -197,12 +197,12 @@ async def play(c: Client, m: Message):
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                             await m.reply_photo(
                                 photo=thumbnail,
-                                caption=f"💡 **Track added to queue »** `{pos}`\n\n🏷 **ɴᴀᴍᴇ:** [{songname}]({url}) | `music`\n**⏱ ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n🎧 **ʀᴇQᴜᴇꜱᴛ ʙʏ:** {requester} \n💚**ᴘᴏᴡᴇʀᴇᴅ ʙʏ :** [🇦 🇵 🇵 🇺 (｡♥️‿♥️｡)](https://t.me/i_appu_you)",
+                                caption=f"💡 **Track added to queue »** `{pos}`\n\n🏷 **ɴᴀᴍᴇ:** [{songname}]({url}) | `music`\n**⏱ ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n🎧 **ʀᴇQᴜᴇꜱᴛ ʙʏ:** {requester} \n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ :** [🇦 🇵 🇵 🇺 (｡♥️‿♥️｡)](https://t.me/i_appu_you)",
                                 reply_markup=keyboard,
                             )
                         else:
                             try:
-                                await suhu.edit(" **🔍**")
+                                await suhu.edit("🏃‍♂️🏃‍♂️ **ᴊᴏɪɴɪɴɢ ᴠᴄ...**")
                                 await call_py.join_group_call(
                                     chat_id,
                                     AudioPiped(
@@ -215,7 +215,7 @@ async def play(c: Client, m: Message):
                                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                                 await m.reply_photo(
                                     photo=thumbnail,
-                                    caption=f"🏷 **ɴᴀᴍᴇ:** [{songname}]({url})\n**⏱ ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n💡 **ꜱᴛᴀᴛᴜꜱ:** `Playing`\n🎧 **ʀᴇQᴜᴇꜱᴛ ʙʏ:** {requester}\n📹 **ꜱᴛʀᴇᴀᴍ ᴛʏᴘᴇ:** `Music` \n💚**ᴘᴏᴡᴇʀᴇᴅ ʙʏ :** [🇦 🇵 🇵 🇺 (｡♥️‿♥️｡)](https://t.me/i_appu_you)",
+                                    caption=f"🏷 **ɴᴀᴍᴇ:** [{songname}]({url})\n**⏱ ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n💡 **ꜱᴛᴀᴛᴜꜱ:** `Playing`\n🎧 **ʀᴇQᴜᴇꜱᴛ ʙʏ:** {requester}\n📹 **ꜱᴛʀᴇᴀᴍ ᴛʏᴘᴇ:** `Music` \n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ :** [🇦 🇵 🇵 🇺 (｡♥️‿♥️｡)](https://t.me/i_appu_you)",
                                     reply_markup=keyboard,
                                 )
                             except Exception as ep:
@@ -228,7 +228,7 @@ async def play(c: Client, m: Message):
                 "» reply to an **audio file** or **give something to search.**"
             )
         else:
-            suhu = await c.send_message(chat_id, "🔍 **Searching...**")
+            suhu = await c.send_message(chat_id, "🔍 ")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
@@ -251,12 +251,12 @@ async def play(c: Client, m: Message):
                         )
                         await m.reply_photo(
                             photo=thumbnail,
-                            caption=f"💡 **Track added to queue »** `{pos}`\n\n🏷 **ɴᴀᴍᴇ:** [{songname}]({url}) | `music`\n**⏱ ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n🎧 **ʀᴇQᴜᴇꜱᴛ ʙʏ:** {requester}\n💚**ᴘᴏᴡᴇʀᴇᴅ ʙʏ :** [🇦 🇵 🇵 🇺 (｡♥️‿♥️｡)](https://t.me/i_appu_you)",
+                            caption=f"💡 **Track added to queue »** `{pos}`\n\n🏷 **ɴᴀᴍᴇ:** [{songname}]({url}) | `music`\n**⏱ ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n🎧 **ʀᴇQᴜᴇꜱᴛ ʙʏ:** {requester}\n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ :** [🇦 🇵 🇵 🇺 (｡♥️‿♥️｡)](https://t.me/i_appu_you)",
                             reply_markup=keyboard,
                         )
                     else:
                         try:
-                            await suhu.edit(" **🔍**")
+                            await suhu.edit("🏃‍♂️🏃‍♂️ **ᴊᴏɪɴɪɴɢ ᴠᴄ...**")
                             await call_py.join_group_call(
                                 chat_id,
                                 AudioPiped(
@@ -269,7 +269,7 @@ async def play(c: Client, m: Message):
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                             await m.reply_photo(
                                 photo=thumbnail,
-                                caption=f"🏷 **ɴᴀᴍᴇ:** [{songname}]({url})\n**⏱ ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n💡 **ꜱᴛᴀᴛᴜꜱ:** `Playing`\n🎧 **ʀᴇQᴜᴇꜱᴛ ʙʏ:** {requester}\n📹 **ꜱᴛʀᴇᴀᴍ ᴛʏᴘᴇ:** `Music`\n💚**ᴘᴏᴡᴇʀᴇᴅ ʙʏ :** [🇦 🇵 🇵 🇺 (｡♥️‿♥️｡)](https://t.me/i_appu_you)",
+                                caption=f"🏷 **ɴᴀᴍᴇ:** [{songname}]({url})\n**⏱ ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n💡 **ꜱᴛᴀᴛᴜꜱ:** `Playing`\n🎧 **ʀᴇQᴜᴇꜱᴛ ʙʏ:** {requester}\n📹 **ꜱᴛʀᴇᴀᴍ ᴛʏᴘᴇ:** `Music`\n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ :** [🇦 🇵 🇵 🇺 (｡♥️‿♥️｡)](https://t.me/i_appu_you)",
                                 reply_markup=keyboard,
                             )
                         except Exception as ep:

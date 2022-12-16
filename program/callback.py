@@ -1,6 +1,8 @@
 # Copyright (C) 2021 By logiMusicProject
 
 from pyrogram import Client, filters
+from driver.queues import QUEUE
+from program.utils.inline import menu_markup
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 from config import (
     ASSISTANT_NAME,
@@ -108,6 +110,22 @@ async def cbhelps(_, query: CallbackQuery):
         ),
     )
 
+@Client.on_callback_query(filters.regex("cbmenu"))
+async def cbmenu(_, query: CallbackQuery):
+    a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
+    if not a.can_manage_voice_chats:
+        return await query.answer("💡 Only admin with manage video chat permission that can tap this button !", show_alert=True)
+    chat_id = query.message.chat.id
+    user_id = query.message.from_user.id
+    buttons = menu_markup(user_id)
+    chat = query.message.chat.title
+    if chat_id in QUEUE:
+          await query.edit_message_text(
+              f"⚙️ **ꜱᴇᴛᴛɪɴɢꜱ ᴏꜰ** {chat}\n\nII : pause stream\n▷ : resume stream\n⦿ : mute userbot\n⦾ : unmute userbot\n▢ : stop stream\n **ᴘᴏᴡᴇʀᴇᴅ ʙʏ :** [🇦 🇵 🇵 🇺 (｡♥️‿♥️｡)](https://t.me/i_appu_you) ",
+              reply_markup=InlineKeyboardMarkup(buttons),
+          )
+    else:
+        await query.answer("❌ nothing is currently streaming", show_alert=True)
 
 @Client.on_callback_query(filters.regex("cls"))
 async def close(_, query: CallbackQuery):
