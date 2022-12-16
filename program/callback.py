@@ -121,7 +121,7 @@ async def cbmenu(_, query: CallbackQuery):
     chat = query.message.chat.title
     if chat_id in QUEUE:
           await query.edit_message_text(
-              f"⚙️ **ꜱᴇᴛᴛɪɴɢꜱ ᴏꜰ** {chat}\n\nII : pause stream\n▷ : resume stream\n⦿ : mute userbot\n⦾ : unmute userbot\n▢ : stop stream\n **ᴘᴏᴡᴇʀᴇᴅ ʙʏ :** [🇦 🇵 🇵 🇺 (｡♥️‿♥️｡)](https://t.me/i_appu_you) ",
+              f"⚙️ **ꜱᴇᴛᴛɪɴɢꜱ ᴏꜰ** {chat}\n\nII : pause stream\n▷ : resume stream\n⦿ : mute userbot\n⦾ : unmute userbot\n▢ : stop stream\n **ᴘᴏᴡᴇʀᴇᴅ ʙʏ :** [🇦 🇵 🇵 🇺 )](https://t.me/i_appu_you) ",
               reply_markup=InlineKeyboardMarkup(buttons),
           )
     else:
